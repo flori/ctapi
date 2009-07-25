@@ -1,0 +1,11 @@
+{
+  "author_email":"flori@ping.de",
+  "author":"Florian Frank",
+  "documentation_url":"doc\/index.html",
+  "download_url":"http:\/\/rubyforge.org\/frs\/?group_id=392",
+  "github_url": "http:\/\/github.com\/flori\/bullshit\/tree\/master",
+  "homepage_url":"http:\/\/flori.github.com/bullshit",
+  "project_name":"Card Terminal Extension for Ruby",
+  "project_unixname":"ctapi",
+  "project_url":"http:\/\/rubyforge.org\/projects\/ctapi"
+}

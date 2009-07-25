@@ -1,0 +1,44 @@
+<h2>Requirements</h2>
+<p>
+You need to install a driver library, that supports the CTAPI interface for
+this extension to link against. The newest version of the towitoko library,
+that is required to drive the Towitoko Chipdrive Micro, Extern, Extern II,
+Intern, Twin, and the "Kartenzwerg", can be download at this URL:
+<br/>
+<br/>
+&nbsp;
+&nbsp;
+&nbsp;
+<a href="http://www.geocities.com/cprados">http://www.geocities.com/cprados</a>
+</p>
+<p>
+This also the only library I ever tested the extension against. But it should
+be possible to link against other driver libraries as well.
+<br/>
+If you have any successes/failures with other libraries, don't hesitate,
+to <a href="mailto:[=@author_email]">drop me an email</a>.
+</p>
+<h2>Installation</h2>
+<p>
+The library can be installed via rubygems:
+</p>
+<pre>
+# gem install [=@project_unixname]
+</pre>
+<p>
+Alternatively you can just type into the command line as root:
+</p>
+<pre>
+# ruby install.rb LIBRARYNAME
+</pre>
+<p>
+where LIBRARYNAME is the name of the ctapi driver library to use. If you want
+to link against the towitoko library, this would be, e. g.,
+</p>
+<pre>
+# ruby install.rb towitoko
+</pre>
+<p>
+The gem and the source archive can also be <a
+href="[=@download_url]">downloaded</a> directly from rubyforge.org.
+</p>

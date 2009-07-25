@@ -1,0 +1,5 @@
+<h2>Description</h2>
+<p>
+These are Ruby bindings to a library that supports the Cardterminal-API (CTAPI)
+for chipcards.
+</p>

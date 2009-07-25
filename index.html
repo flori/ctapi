@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html 
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>Card Terminal Extension for Ruby</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+
+    <ul id="linkbox">
+      <li><a href="http://flori.github.com/bullshit/index.html">Homepage</a></li>
+      <li><a href="http://github.com/flori/bullshit/tree/master">Github Repository</a></li>
+      <li><a href="http://rubyforge.org/projects/ctapi">RubyForge Project</a></li>
+      <li><a href="http://rubyforge.org/frs/?group_id=392">Download</a></li>
+      <li><a href="doc/index.html">Documentation</a></li>
+      
+    </ul>
+
+    <img style="margin: 28px 15px 15px 15px" id="logo" src="ctapi.png" alt="Cardterminal API" title="Cardterminal API" />
+
+    <div id="content">
+      <h1>ctapi &ndash; Card Terminal Extension for Ruby</h1>
+
+<h2>Description</h2>
+<p>
+These are Ruby bindings to a library that supports the Cardterminal-API (CTAPI)
+for chipcards.
+</p>
+
+<h2>Requirements</h2>
+<p>
+You need to install a driver library, that supports the CTAPI interface for
+this extension to link against. The newest version of the towitoko library,
+that is required to drive the Towitoko Chipdrive Micro, Extern, Extern II,
+Intern, Twin, and the "Kartenzwerg", can be download at this URL:
+<br/>
+<br/>
+&nbsp;
+&nbsp;
+&nbsp;
+<a href="http://www.geocities.com/cprados">http://www.geocities.com/cprados</a>
+</p>
+<p>
+This also the only library I ever tested the extension against. But it should
+be possible to link against other driver libraries as well.
+<br/>
+If you have any successes/failures with other libraries, don't hesitate,
+to <a href="mailto:flori@ping.de">drop me an email</a>.
+</p>
+<h2>Installation</h2>
+<p>
+The library can be installed via rubygems:
+</p>
+<pre>
+# gem install ctapi
+</pre>
+<p>
+Alternatively you can just type into the command line as root:
+</p>
+<pre>
+# ruby install.rb LIBRARYNAME
+</pre>
+<p>
+where LIBRARYNAME is the name of the ctapi driver library to use. If you want
+to link against the towitoko library, this would be, e. g.,
+</p>
+<pre>
+# ruby install.rb towitoko
+</pre>
+<p>
+The gem and the source archive can also be <a
+href="http://rubyforge.org/frs/?group_id=392">downloaded</a> directly from rubyforge.org.
+</p>
+
+      <h2>Author</h2>
+      Florian Frank &lt;<a href="mailto:flori@ping.de">flori@ping.de</a>&gt;
+
+<h2>License</h2>
+<p>
+This is free software; you can redistribute it and/or modify it under the terms
+of the GNU General Public License Version 2 as published by the Free Software
+Foundation: <a href="http://www.gnu.org/copyleft/gpl.html">GNU GPL</a>.
+</p>
+
+    </div>
+    <p class="valid">
+      <a href="http://validator.w3.org/check?uri=referer"><img
+        src="http://www.w3.org/Icons/valid-xhtml10"
+        alt="Valid XHTML 1.0 Transitional" height="31" width="88" /></a>
+    </p>
+  </body>
+</html>
+
