@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Module: CTAPICore</title>
+
+	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="module">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="./ext/ctapicore_c.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="ext/ctapicore.c">ext/ctapicore.c</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="CTAPICore/CTAPIError.html">CTAPICore::CTAPIError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="CTAPICore/CardterminalError.html">CTAPICore::CardterminalError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="CTAPICore/HTSIError.html">CTAPICore::HTSIError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="CTAPICore/InvalidError.html">CTAPICore::InvalidError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="CTAPICore/MemoryError.html">CTAPICore::MemoryError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="CTAPICore/TransmissionError.html">CTAPICore::TransmissionError</a></li>
+					
+					<li><span class="type">CLASS</span> <a href="CTAPICore/UnknownError.html">CTAPICore::UnknownError</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000024">::ct_close</a></li>
+					
+					<li><a href="#M000023">::ct_data</a></li>
+					
+					<li><a href="#M000022">::ct_init</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./doc-main_txt.html">doc-main.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./CTAPICore.html">CTAPICore</a></li>
+				
+					<li><a href="./CTAPICore/CTAPIError.html">CTAPICore::CTAPIError</a></li>
+				
+					<li><a href="./CTAPICore/CardterminalError.html">CTAPICore::CardterminalError</a></li>
+				
+					<li><a href="./CTAPICore/HTSIError.html">CTAPICore::HTSIError</a></li>
+				
+					<li><a href="./CTAPICore/InvalidError.html">CTAPICore::InvalidError</a></li>
+				
+					<li><a href="./CTAPICore/MemoryError.html">CTAPICore::MemoryError</a></li>
+				
+					<li><a href="./CTAPICore/TransmissionError.html">CTAPICore::TransmissionError</a></li>
+				
+					<li><a href="./CTAPICore/UnknownError.html">CTAPICore::UnknownError</a></li>
+				
+					<li><a href="./CTAPI.html">CTAPI</a></li>
+				
+					<li><a href="./CTAPI/APDU.html">CTAPI::APDU</a></li>
+				
+					<li><a href="./CTAPI/Card.html">CTAPI::Card</a></li>
+				
+					<li><a href="./CTAPI/Cardterminal.html">CTAPI::Cardterminal</a></li>
+				
+					<li><a href="./CTAPI/Cardterminal/Manufacturer.html">CTAPI::Cardterminal::Manufacturer</a></li>
+				
+					<li><a href="./CTAPI/Command.html">CTAPI::Command</a></li>
+				
+					<li><a href="./CTAPI/Response.html">CTAPI::Response</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="module">CTAPICore</h1>
+
+		<div id="description">
+			<p>
+The <a href="CTAPICore.html">CTAPICore</a> that interfaces with the shared
+library for your cardterminal. The following constants are defined in this
+module:
+</p>
+<pre>
+ CT
+ CTBCS_CLA
+ CTBCS_DATA_STATUS_CARD
+ CTBCS_DATA_STATUS_CARD_CONNECT
+ CTBCS_DATA_STATUS_NOCARD
+ CTBCS_INS_EJECT
+ CTBCS_INS_REQUEST
+ CTBCS_INS_RESET
+ CTBCS_INS_STATUS
+ CTBCS_MIN_COMMAND_SIZE
+ CTBCS_MIN_RESPONSE_SIZE
+ CTBCS_P1_CT_KERNEL
+ CTBCS_P1_DISPLAY
+ CTBCS_P1_INTERFACE1
+ CTBCS_P1_INTERFACE10
+ CTBCS_P1_INTERFACE11
+ CTBCS_P1_INTERFACE12
+ CTBCS_P1_INTERFACE13
+ CTBCS_P1_INTERFACE14
+ CTBCS_P1_INTERFACE2
+ CTBCS_P1_INTERFACE3
+ CTBCS_P1_INTERFACE4
+ CTBCS_P1_INTERFACE5
+ CTBCS_P1_INTERFACE6
+ CTBCS_P1_INTERFACE7
+ CTBCS_P1_INTERFACE8
+ CTBCS_P1_INTERFACE9
+ CTBCS_P1_KEYPAD
+ CTBCS_P2_REQUEST_GET_ATR
+ CTBCS_P2_REQUEST_GET_HIST
+ CTBCS_P2_REQUEST_NO_RESP
+ CTBCS_P2_RESET_GET_ATR
+ CTBCS_P2_RESET_GET_HIST
+ CTBCS_P2_RESET_NO_RESP
+ CTBCS_P2_STATUS_ICC
+ CTBCS_P2_STATUS_MANUFACTURER
+ CTBCS_SW1_COMMAND_NOT_ALLOWED
+ CTBCS_SW1_EJECT_NOT_REMOVED
+ CTBCS_SW1_EJECT_OK
+ CTBCS_SW1_EJECT_REMOVED
+ CTBCS_SW1_ICC_ERROR
+ CTBCS_SW1_OK
+ CTBCS_SW1_REQUEST_ASYNC_OK
+ CTBCS_SW1_REQUEST_CARD_PRESENT
+ CTBCS_SW1_REQUEST_ERROR
+ CTBCS_SW1_REQUEST_NO_CARD
+ CTBCS_SW1_REQUEST_SYNC_OK
+ CTBCS_SW1_REQUEST_TIMER_ERROR
+ CTBCS_SW1_RESET_ASYNC_OK
+ CTBCS_SW1_RESET_CT_OK
+ CTBCS_SW1_RESET_ERROR
+ CTBCS_SW1_RESET_SYNC_OK
+ CTBCS_SW1_WRONG_CLA
+ CTBCS_SW1_WRONG_INS
+ CTBCS_SW1_WRONG_LENGTH
+ CTBCS_SW1_WRONG_PARAM
+ CTBCS_SW2_COMMAND_NOT_ALLOWED
+ CTBCS_SW2_EJECT_NOT_REMOVED
+ CTBCS_SW2_EJECT_OK
+ CTBCS_SW2_EJECT_REMOVED
+ CTBCS_SW2_ICC_ERROR
+ CTBCS_SW2_OK
+ CTBCS_SW2_REQUEST_ASYNC_OK
+ CTBCS_SW2_REQUEST_CARD_PRESENT
+ CTBCS_SW2_REQUEST_ERROR
+ CTBCS_SW2_REQUEST_NO_CARD
+</pre>
+<p>
+<a
+href="CTAPICore.html#CTBCS_SW2_REQUEST_SYNC_OK">CTBCS_SW2_REQUEST_SYNC_OK</a>
+<a
+href="CTAPICore.html#CTBCS_SW2_REQUEST_TIMER_ERROR">CTBCS_SW2_REQUEST_TIMER_ERROR</a>
+<a
+href="CTAPICore.html#CTBCS_SW2_RESET_ASYNC_OK">CTBCS_SW2_RESET_ASYNC_OK</a>
+<a href="CTAPICore.html#CTBCS_SW2_RESET_CT_OK">CTBCS_SW2_RESET_CT_OK</a> <a
+href="CTAPICore.html#CTBCS_SW2_RESET_ERROR">CTBCS_SW2_RESET_ERROR</a> <a
+href="CTAPICore.html#CTBCS_SW2_RESET_SYNC_OK">CTBCS_SW2_RESET_SYNC_OK</a>
+<a href="CTAPICore.html#CTBCS_SW2_WRONG_CLA">CTBCS_SW2_WRONG_CLA</a> <a
+href="CTAPICore.html#CTBCS_SW2_WRONG_INS">CTBCS_SW2_WRONG_INS</a> <a
+href="CTAPICore.html#CTBCS_SW2_WRONG_LENGTH">CTBCS_SW2_WRONG_LENGTH</a> <a
+href="CTAPICore.html#CTBCS_SW2_WRONG_PARAM">CTBCS_SW2_WRONG_PARAM</a> <a
+href="CTAPICore.html#ERR_CT">ERR_CT</a> <a
+href="CTAPICore.html#ERR_HTSI">ERR_HTSI</a> <a
+href="CTAPICore.html#ERR_INVALID">ERR_INVALID</a> <a
+href="CTAPICore.html#ERR_MEMORY">ERR_MEMORY</a> <a
+href="CTAPICore.html#ERR_TRANS">ERR_TRANS</a> <a
+href="CTAPICore.html#HOST">HOST</a> <a
+href="CTAPICore/HTSIError.html">HTSIError</a> <a
+href="CTAPICore.html#ICC1">ICC1</a> <a
+href="CTAPICore.html#ICC10">ICC10</a> <a
+href="CTAPICore.html#ICC11">ICC11</a> <a
+href="CTAPICore.html#ICC12">ICC12</a> <a
+href="CTAPICore.html#ICC13">ICC13</a> <a
+href="CTAPICore.html#ICC14">ICC14</a> <a
+href="CTAPICore.html#ICC2">ICC2</a> <a href="CTAPICore.html#ICC3">ICC3</a>
+<a href="CTAPICore.html#ICC4">ICC4</a> <a
+href="CTAPICore.html#ICC5">ICC5</a> <a href="CTAPICore.html#ICC6">ICC6</a>
+<a href="CTAPICore.html#ICC7">ICC7</a> <a
+href="CTAPICore.html#ICC8">ICC8</a> <a href="CTAPICore.html#ICC9">ICC9</a>
+<a href="CTAPICore.html#MAX_APDULEN">MAX_APDULEN</a> <a
+href="CTAPICore.html#OK">OK</a> <a
+href="CTAPICore.html#PORT_COM1">PORT_COM1</a> <a
+href="CTAPICore.html#PORT_COM2">PORT_COM2</a> <a
+href="CTAPICore.html#PORT_COM3">PORT_COM3</a> <a
+href="CTAPICore.html#PORT_COM4">PORT_COM4</a> <a
+href="CTAPICore.html#PORT_LPT1">PORT_LPT1</a> <a
+href="CTAPICore.html#PORT_LPT2">PORT_LPT2</a> <a
+href="CTAPICore.html#PORT_Modem">PORT_Modem</a> <a
+href="CTAPICore.html#PORT_Printer">PORT_Printer</a>
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="CTBCS_MIN_COMMAND_SIZE">CTBCS_MIN_COMMAND_SIZE</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_MIN_RESPONSE_SIZE">CTBCS_MIN_RESPONSE_SIZE</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_CLA">CTBCS_CLA</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_INS_RESET">CTBCS_INS_RESET</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_INS_REQUEST">CTBCS_INS_REQUEST</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_INS_STATUS">CTBCS_INS_STATUS</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_INS_EJECT">CTBCS_INS_EJECT</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_CT_KERNEL">CTBCS_P1_CT_KERNEL</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE1">CTBCS_P1_INTERFACE1</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE2">CTBCS_P1_INTERFACE2</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE3">CTBCS_P1_INTERFACE3</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE4">CTBCS_P1_INTERFACE4</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE5">CTBCS_P1_INTERFACE5</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE6">CTBCS_P1_INTERFACE6</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE7">CTBCS_P1_INTERFACE7</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE8">CTBCS_P1_INTERFACE8</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE9">CTBCS_P1_INTERFACE9</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE10">CTBCS_P1_INTERFACE10</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE11">CTBCS_P1_INTERFACE11</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE12">CTBCS_P1_INTERFACE12</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE13">CTBCS_P1_INTERFACE13</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_INTERFACE14">CTBCS_P1_INTERFACE14</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_DISPLAY">CTBCS_P1_DISPLAY</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P1_KEYPAD">CTBCS_P1_KEYPAD</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P2_RESET_NO_RESP">CTBCS_P2_RESET_NO_RESP</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P2_RESET_GET_ATR">CTBCS_P2_RESET_GET_ATR</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P2_RESET_GET_HIST">CTBCS_P2_RESET_GET_HIST</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P2_REQUEST_NO_RESP">CTBCS_P2_REQUEST_NO_RESP</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P2_REQUEST_GET_ATR">CTBCS_P2_REQUEST_GET_ATR</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P2_REQUEST_GET_HIST">CTBCS_P2_REQUEST_GET_HIST</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P2_STATUS_MANUFACTURER">CTBCS_P2_STATUS_MANUFACTURER</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_P2_STATUS_ICC">CTBCS_P2_STATUS_ICC</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_OK">CTBCS_SW1_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_OK">CTBCS_SW2_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_WRONG_LENGTH">CTBCS_SW1_WRONG_LENGTH</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_WRONG_LENGTH">CTBCS_SW2_WRONG_LENGTH</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_COMMAND_NOT_ALLOWED">CTBCS_SW1_COMMAND_NOT_ALLOWED</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_COMMAND_NOT_ALLOWED">CTBCS_SW2_COMMAND_NOT_ALLOWED</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_WRONG_PARAM">CTBCS_SW1_WRONG_PARAM</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_WRONG_PARAM">CTBCS_SW2_WRONG_PARAM</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_WRONG_INS">CTBCS_SW1_WRONG_INS</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_WRONG_INS">CTBCS_SW2_WRONG_INS</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_WRONG_CLA">CTBCS_SW1_WRONG_CLA</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_WRONG_CLA">CTBCS_SW2_WRONG_CLA</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_ICC_ERROR">CTBCS_SW1_ICC_ERROR</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_ICC_ERROR">CTBCS_SW2_ICC_ERROR</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_RESET_CT_OK">CTBCS_SW1_RESET_CT_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_RESET_CT_OK">CTBCS_SW2_RESET_CT_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_RESET_SYNC_OK">CTBCS_SW1_RESET_SYNC_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_RESET_SYNC_OK">CTBCS_SW2_RESET_SYNC_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_RESET_ASYNC_OK">CTBCS_SW1_RESET_ASYNC_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_RESET_ASYNC_OK">CTBCS_SW2_RESET_ASYNC_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_RESET_ERROR">CTBCS_SW1_RESET_ERROR</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_RESET_ERROR">CTBCS_SW2_RESET_ERROR</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_REQUEST_SYNC_OK">CTBCS_SW1_REQUEST_SYNC_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_REQUEST_SYNC_OK">CTBCS_SW2_REQUEST_SYNC_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_REQUEST_ASYNC_OK">CTBCS_SW1_REQUEST_ASYNC_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_REQUEST_ASYNC_OK">CTBCS_SW2_REQUEST_ASYNC_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_REQUEST_NO_CARD">CTBCS_SW1_REQUEST_NO_CARD</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_REQUEST_NO_CARD">CTBCS_SW2_REQUEST_NO_CARD</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_REQUEST_CARD_PRESENT">CTBCS_SW1_REQUEST_CARD_PRESENT</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_REQUEST_CARD_PRESENT">CTBCS_SW2_REQUEST_CARD_PRESENT</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_REQUEST_ERROR">CTBCS_SW1_REQUEST_ERROR</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_REQUEST_ERROR">CTBCS_SW2_REQUEST_ERROR</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_REQUEST_TIMER_ERROR">CTBCS_SW1_REQUEST_TIMER_ERROR</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_REQUEST_TIMER_ERROR">CTBCS_SW2_REQUEST_TIMER_ERROR</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_EJECT_OK">CTBCS_SW1_EJECT_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_EJECT_OK">CTBCS_SW2_EJECT_OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_EJECT_REMOVED">CTBCS_SW1_EJECT_REMOVED</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_EJECT_REMOVED">CTBCS_SW2_EJECT_REMOVED</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW1_EJECT_NOT_REMOVED">CTBCS_SW1_EJECT_NOT_REMOVED</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_SW2_EJECT_NOT_REMOVED">CTBCS_SW2_EJECT_NOT_REMOVED</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_DATA_STATUS_NOCARD">CTBCS_DATA_STATUS_NOCARD</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_DATA_STATUS_CARD">CTBCS_DATA_STATUS_CARD</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CTBCS_DATA_STATUS_CARD_CONNECT">CTBCS_DATA_STATUS_CARD_CONNECT</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="MAX_APDULEN">MAX_APDULEN</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="OK">OK</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ERR_INVALID">ERR_INVALID</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ERR_CT">ERR_CT</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ERR_TRANS">ERR_TRANS</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ERR_MEMORY">ERR_MEMORY</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ERR_HTSI">ERR_HTSI</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="PORT_COM1">PORT_COM1</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="PORT_COM2">PORT_COM2</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="PORT_COM3">PORT_COM3</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="PORT_COM4">PORT_COM4</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="PORT_Printer">PORT_Printer</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="PORT_Modem">PORT_Modem</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="PORT_LPT1">PORT_LPT1</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="PORT_LPT2">PORT_LPT2</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="CT">CT</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="HOST">HOST</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC1">ICC1</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC2">ICC2</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC3">ICC3</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC4">ICC4</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC5">ICC5</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC6">ICC6</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC7">ICC7</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC8">ICC8</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC9">ICC9</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC10">ICC10</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC11">ICC11</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC12">ICC12</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC13">ICC13</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+				<dt><a name="ICC14">ICC14</a></dt>
+				
+				<dd class="description missing-docs">(Not documented)</dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="ct-close-method" class="method-detail ">
+				<a name="M000024"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">ct_close</span><span
+						class="method-args">(...)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+A wrapper function for the <a href="CTAPICore.html#CT">CT</a> API
+CT_close(ctn) function. It takes a cardterminal number as the only
+argument. See ctapi(3) for more information.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="ct-close-source">
+<pre>
+static VALUE
+ctapi_ct_close(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="ct-data-method" class="method-detail ">
+				<a name="M000023"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">ct_data</span><span
+						class="method-args">(...)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+A wrapper function for the <a href="CTAPICore.html#CT">CT</a> API CT_data
+function. This one is much nicer than the original CT_data because is has
+fewer arguments: <a href="CTAPICore.html#M000023">ct_data</a>(ctn, dad,
+sad, cmd) where ctn is the cardterminal number, dad is the destination
+address number, sad is the source address number and cmd is the command as
+a String. See ctapi(3) for more information.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="ct-data-source">
+<pre>
+static VALUE
+ctapi_ct_data(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="ct-init-method" class="method-detail ">
+				<a name="M000022"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">ct_init</span><span
+						class="method-args">(...)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+A wrapper function for the <a href="CTAPICore.html#CT">CT</a> API
+CT_init(ctn, pn) function. The first argument is a cardterminal number, the
+second argument is an identifier for the interface as a portnumber. See
+ctapi(3) for more information.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="ct-init-source">
+<pre>
+static VALUE
+ctapi_ct_init(int argc, VALUE *argv, VALUE self) </pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

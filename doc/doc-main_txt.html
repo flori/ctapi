@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>File: doc-main.txt [RDoc Documentation]</title>
+
+	<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+	<script src="./js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="./js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+</head>
+
+<body class="file">
+	<div id="metadata">
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="./doc-main_txt.html">doc-main.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="./images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="./CTAPICore.html">CTAPICore</a></li>
+				
+					<li><a href="./CTAPICore/CTAPIError.html">CTAPICore::CTAPIError</a></li>
+				
+					<li><a href="./CTAPICore/CardterminalError.html">CTAPICore::CardterminalError</a></li>
+				
+					<li><a href="./CTAPICore/HTSIError.html">CTAPICore::HTSIError</a></li>
+				
+					<li><a href="./CTAPICore/InvalidError.html">CTAPICore::InvalidError</a></li>
+				
+					<li><a href="./CTAPICore/MemoryError.html">CTAPICore::MemoryError</a></li>
+				
+					<li><a href="./CTAPICore/TransmissionError.html">CTAPICore::TransmissionError</a></li>
+				
+					<li><a href="./CTAPICore/UnknownError.html">CTAPICore::UnknownError</a></li>
+				
+					<li><a href="./CTAPI.html">CTAPI</a></li>
+				
+					<li><a href="./CTAPI/APDU.html">CTAPI::APDU</a></li>
+				
+					<li><a href="./CTAPI/Card.html">CTAPI::Card</a></li>
+				
+					<li><a href="./CTAPI/Cardterminal.html">CTAPI::Cardterminal</a></li>
+				
+					<li><a href="./CTAPI/Cardterminal/Manufacturer.html">CTAPI::Cardterminal::Manufacturer</a></li>
+				
+					<li><a href="./CTAPI/Command.html">CTAPI::Command</a></li>
+				
+					<li><a href="./CTAPI/Response.html">CTAPI::Response</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<p>
+There are two possible ways to use this library:
+</p>
+<ul>
+<li>You can require &#8216;ctapicore&#8217; and directly use the ct_init,
+ct_data and ct_close methods . That will give you access to the very simple
+C-Interface in Ruby, but you have to send APDU commands and receive and
+interpret APDU Responses yourself:
+
+</li>
+</ul>
+<pre>
+ require 'ctapicore'
+ include CTAPICore
+ ct_init(PORT_COM1, 0)
+ response = ct_data(0, CT, HOST, &quot;\x12\x34\x56&quot;)
+ p response
+ ct_close(0)
+</pre>
+<ul>
+<li>You can require &#8216;ctapi&#8217; and the module <a
+href="CTAPI.html">CTAPI</a> has some nice abstractions to deal with
+cardterminals, cards and APDUs, which are much more the Ruby Way:
+
+</li>
+</ul>
+<pre>
+ require 'ctapi'
+ include CTAPI
+ Cardterminal.open(PORT_COM1) do |ct|
+   puts &quot;Cardterminal Manufacturer: &quot; + ct.manufacturer.to_s
+   if ct.card_inserted?
+     card = ct.card
+     puts &quot;My Cardterminal object: #{ct.inspect}&quot;
+     puts &quot;Current card status is: #{ct.card_status}&quot;
+     puts &quot;Answer to Reset is #{card.atr}.&quot;
+     puts &quot;ATR ok? #{card.atr_ok?}.&quot;
+     puts &quot;Memory size of this card is #{card.memory_size} bytes&quot; +
+       (#{card.memory_blocks} blocks x #{card.memory_bits} bit).&quot;
+     puts &quot;Structure of this card is #{card.structure}.&quot;
+     puts &quot;Supported protocol type of this card is #{card.protocol}.&quot;
+     puts &quot;Trying to read(0, 16):&quot;
+     data = ct.read(0, 16)
+     puts &quot;Have read #{data.size} bytes:&quot;
+     p data
+   else
+     puts &quot;Please insert a card into your cardterminal!&quot;
+   end
+ end
+</pre>
+
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>
+

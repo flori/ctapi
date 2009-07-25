@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>RDoc Documentation</title>
+
+	<link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+	
+	<h1>RDoc Documentation</h1>
+
+	
+	<div id="main">
+		<p>
+There are two possible ways to use this library:
+</p>
+<ul>
+<li>You can require &#8216;ctapicore&#8217; and directly use the ct_init,
+ct_data and ct_close methods . That will give you access to the very simple
+C-Interface in Ruby, but you have to send APDU commands and receive and
+interpret APDU Responses yourself:
+
+</li>
+</ul>
+<pre>
+ require 'ctapicore'
+ include CTAPICore
+ ct_init(PORT_COM1, 0)
+ response = ct_data(0, CT, HOST, &quot;\x12\x34\x56&quot;)
+ p response
+ ct_close(0)
+</pre>
+<ul>
+<li>You can require &#8216;ctapi&#8217; and the module <a
+href="CTAPI.html">CTAPI</a> has some nice abstractions to deal with
+cardterminals, cards and APDUs, which are much more the Ruby Way:
+
+</li>
+</ul>
+<pre>
+ require 'ctapi'
+ include CTAPI
+ Cardterminal.open(PORT_COM1) do |ct|
+   puts &quot;Cardterminal Manufacturer: &quot; + ct.manufacturer.to_s
+   if ct.card_inserted?
+     card = ct.card
+     puts &quot;My Cardterminal object: #{ct.inspect}&quot;
+     puts &quot;Current card status is: #{ct.card_status}&quot;
+     puts &quot;Answer to Reset is #{card.atr}.&quot;
+     puts &quot;ATR ok? #{card.atr_ok?}.&quot;
+     puts &quot;Memory size of this card is #{card.memory_size} bytes&quot; +
+       (#{card.memory_blocks} blocks x #{card.memory_bits} bit).&quot;
+     puts &quot;Structure of this card is #{card.structure}.&quot;
+     puts &quot;Supported protocol type of this card is #{card.protocol}.&quot;
+     puts &quot;Trying to read(0, 16):&quot;
+     data = ct.read(0, 16)
+     puts &quot;Have read #{data.size} bytes:&quot;
+     p data
+   else
+     puts &quot;Please insert a card into your cardterminal!&quot;
+   end
+ end
+</pre>
+
+	</div>
+	
+
+	
+	
+	<h2>Files</h2>
+	<ul>
+		
+			<li class="file"><a href="doc-main_txt.html">doc-main.txt</a></li>
+		
+	</ul>
+	
+
+	<h2>Classes/Modules</h2>
+	<ul>
+		
+		<li class="module"><a href="CTAPICore.html">CTAPICore</a></li>
+		
+		<li class="class"><a href="CTAPICore/CTAPIError.html">CTAPICore::CTAPIError</a></li>
+		
+		<li class="class"><a href="CTAPICore/CardterminalError.html">CTAPICore::CardterminalError</a></li>
+		
+		<li class="class"><a href="CTAPICore/HTSIError.html">CTAPICore::HTSIError</a></li>
+		
+		<li class="class"><a href="CTAPICore/InvalidError.html">CTAPICore::InvalidError</a></li>
+		
+		<li class="class"><a href="CTAPICore/MemoryError.html">CTAPICore::MemoryError</a></li>
+		
+		<li class="class"><a href="CTAPICore/TransmissionError.html">CTAPICore::TransmissionError</a></li>
+		
+		<li class="class"><a href="CTAPICore/UnknownError.html">CTAPICore::UnknownError</a></li>
+		
+		<li class="module"><a href="CTAPI.html">CTAPI</a></li>
+		
+		<li class="class"><a href="CTAPI/APDU.html">CTAPI::APDU</a></li>
+		
+		<li class="class"><a href="CTAPI/Card.html">CTAPI::Card</a></li>
+		
+		<li class="class"><a href="CTAPI/Cardterminal.html">CTAPI::Cardterminal</a></li>
+		
+		<li class="class"><a href="CTAPI/Cardterminal/Manufacturer.html">CTAPI::Cardterminal::Manufacturer</a></li>
+		
+		<li class="class"><a href="CTAPI/Command.html">CTAPI::Command</a></li>
+		
+		<li class="class"><a href="CTAPI/Response.html">CTAPI::Response</a></li>
+		
+	</ul>
+
+	<h2>Methods</h2>
+	<ul>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000000">::cardterminals &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPICore.html#M000024">::ct_close &mdash; CTAPICore</a></li>
+		
+			<li><a href="CTAPICore.html#M000023">::ct_data &mdash; CTAPICore</a></li>
+		
+			<li><a href="CTAPICore.html#M000022">::ct_init &mdash; CTAPICore</a></li>
+		
+			<li><a href="CTAPI/Command.html#M000033">::from_array &mdash; CTAPI::Command</a></li>
+		
+			<li><a href="CTAPI/Command.html#M000032">::from_string &mdash; CTAPI::Command</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000002">::new &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Card.html#M000037">::new &mdash; CTAPI::Card</a></li>
+		
+			<li><a href="CTAPI/APDU.html#M000028">::new &mdash; CTAPI::APDU</a></li>
+		
+			<li><a href="CTAPI/Cardterminal/Manufacturer.html#M000025">::new &mdash; CTAPI::Cardterminal::Manufacturer</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000005">::open &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/APDU.html#M000029">#[] &mdash; CTAPI::APDU</a></li>
+		
+			<li><a href="CTAPI/Card.html#M000038">#atr_ok? &mdash; CTAPI::Card</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000021">#card_changed? &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000020">#card_inserted? &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000019">#card_status &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000001">#cardterminals &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000014">#change_pin &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Response.html#M000035">#changed? &mdash; CTAPI::Response</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000004">#chunk_size= &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000007">#close &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000006">#data &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000027">#debug &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000017">#eject_icc &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000013">#enter_pin &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000003">#get_manufacturer &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/APDU.html#M000030">#inspect &mdash; CTAPI::APDU</a></li>
+		
+			<li><a href="CTAPI/Card.html#M000045">#inspect &mdash; CTAPI::Card</a></li>
+		
+			<li><a href="CTAPI/Card.html#M000039">#memory_bits &mdash; CTAPI::Card</a></li>
+		
+			<li><a href="CTAPI/Card.html#M000040">#memory_blocks &mdash; CTAPI::Card</a></li>
+		
+			<li><a href="CTAPI/Card.html#M000041">#memory_size &mdash; CTAPI::Card</a></li>
+		
+			<li><a href="CTAPI/Response.html#M000036">#not_changed? &mdash; CTAPI::Response</a></li>
+		
+			<li><a href="CTAPI/Card.html#M000043">#protocol &mdash; CTAPI::Card</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000010">#read &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000009">#read_chunk &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000015">#request_card_status &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000016">#request_icc &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000018">#reset &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000008">#select_file &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Card.html#M000042">#structure &mdash; CTAPI::Card</a></li>
+		
+			<li><a href="CTAPI/Response.html#M000034">#successful? &mdash; CTAPI::Response</a></li>
+		
+			<li><a href="CTAPI/Card.html#M000044">#to_s &mdash; CTAPI::Card</a></li>
+		
+			<li><a href="CTAPI/Cardterminal/Manufacturer.html#M000026">#to_s &mdash; CTAPI::Cardterminal::Manufacturer</a></li>
+		
+			<li><a href="CTAPI/APDU.html#M000031">#to_s &mdash; CTAPI::APDU</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000012">#write &mdash; CTAPI::Cardterminal</a></li>
+		
+			<li><a href="CTAPI/Cardterminal.html#M000011">#write_chunk &mdash; CTAPI::Cardterminal</a></li>
+		
+	</ul>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
+</html>

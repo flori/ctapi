@@ -1,0 +1,1372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: CTAPI::Cardterminal</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/ctapi_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/ctapi.rb">lib/ctapi.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+			<div id="namespace-list-section" class="section">
+				<h3 class="section-header">Namespace</h3>
+				<ul class="link-list">
+					
+					<li><span class="type">CLASS</span> <a href="Cardterminal/Manufacturer.html">CTAPI::Cardterminal::Manufacturer</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#M000000">::cardterminals</a></li>
+					
+					<li><a href="#M000002">::new</a></li>
+					
+					<li><a href="#M000005">::open</a></li>
+					
+					<li><a href="#M000021">#card_changed?</a></li>
+					
+					<li><a href="#M000020">#card_inserted?</a></li>
+					
+					<li><a href="#M000019">#card_status</a></li>
+					
+					<li><a href="#M000001">#cardterminals</a></li>
+					
+					<li><a href="#M000014">#change_pin</a></li>
+					
+					<li><a href="#M000004">#chunk_size=</a></li>
+					
+					<li><a href="#M000007">#close</a></li>
+					
+					<li><a href="#M000006">#data</a></li>
+					
+					<li><a href="#M000027">#debug</a></li>
+					
+					<li><a href="#M000017">#eject_icc</a></li>
+					
+					<li><a href="#M000013">#enter_pin</a></li>
+					
+					<li><a href="#M000003">#get_manufacturer</a></li>
+					
+					<li><a href="#M000010">#read</a></li>
+					
+					<li><a href="#M000009">#read_chunk</a></li>
+					
+					<li><a href="#M000015">#request_card_status</a></li>
+					
+					<li><a href="#M000016">#request_icc</a></li>
+					
+					<li><a href="#M000018">#reset</a></li>
+					
+					<li><a href="#M000008">#select_file</a></li>
+					
+					<li><a href="#M000012">#write</a></li>
+					
+					<li><a href="#M000011">#write_chunk</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+			<div id="includes-section" class="section">
+				<h3 class="section-header">Included Modules</h3>
+				<ul class="link-list">
+				
+				
+					<li><a class="include" href="../CTAPICore.html">CTAPICore</a></li>
+				
+				
+				</ul>
+			</div>
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../doc-main_txt.html">doc-main.txt</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../CTAPICore.html">CTAPICore</a></li>
+				
+					<li><a href="../CTAPICore/CTAPIError.html">CTAPICore::CTAPIError</a></li>
+				
+					<li><a href="../CTAPICore/CardterminalError.html">CTAPICore::CardterminalError</a></li>
+				
+					<li><a href="../CTAPICore/HTSIError.html">CTAPICore::HTSIError</a></li>
+				
+					<li><a href="../CTAPICore/InvalidError.html">CTAPICore::InvalidError</a></li>
+				
+					<li><a href="../CTAPICore/MemoryError.html">CTAPICore::MemoryError</a></li>
+				
+					<li><a href="../CTAPICore/TransmissionError.html">CTAPICore::TransmissionError</a></li>
+				
+					<li><a href="../CTAPICore/UnknownError.html">CTAPICore::UnknownError</a></li>
+				
+					<li><a href="../CTAPI.html">CTAPI</a></li>
+				
+					<li><a href="../CTAPI/APDU.html">CTAPI::APDU</a></li>
+				
+					<li><a href="../CTAPI/Card.html">CTAPI::Card</a></li>
+				
+					<li><a href="../CTAPI/Cardterminal.html">CTAPI::Cardterminal</a></li>
+				
+					<li><a href="../CTAPI/Cardterminal/Manufacturer.html">CTAPI::Cardterminal::Manufacturer</a></li>
+				
+					<li><a href="../CTAPI/Command.html">CTAPI::Command</a></li>
+				
+					<li><a href="../CTAPI/Response.html">CTAPI::Response</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">CTAPI::Cardterminal</h1>
+
+		<div id="description">
+			<p>
+Represents a cardterminal. Mixes in <a href="../CTAPI.html">CTAPI</a>
+methods and constants.
+</p>
+
+		</div>
+
+		<!-- Constants -->
+		
+		<div id="constants-list" class="section">
+			<h3 class="section-header">Constants</h3>
+			<dl>
+			
+				<dt><a name="LOCK">LOCK</a></dt>
+				
+				<dd class="description"><p>
+Global lock for managment of cardterminals.
+</p></dd>
+				
+			
+			</dl>
+		</div>
+		
+
+		<!-- Attributes -->
+		
+		<div id="attribute-method-details" class="method-section section">
+			<h3 class="section-header">Attributes</h3>
+
+			
+			<div id="number-attribute-method" class="method-detail">
+				<a name="number"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">number</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The cardterminal number assigned to this object.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="interface-attribute-method" class="method-detail">
+				<a name="interface"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">interface</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The interface this cardterminal is connected to. This is a value of
+PORT_COM1, PORT_COM2, PORT_COM3, PORT_COM4, PORT_LPT1, PORT_LPT2,
+PORT_Modem or PORT_Printer.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="slot-attribute-method" class="method-detail">
+				<a name="slot"></a>
+				
+				<a name="slot="></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">slot</span><span
+						class="attribute-access-type">[RW]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The slot of the card terminal where the card is inserted. This is a value
+in the range of ICC1, ICC2,&#8230;, ICC14. Default is ICC1.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="chunk-size-attribute-method" class="method-detail">
+				<a name="chunk_size"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">chunk_size</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The maximum size of the chunks of data that are read from/written to the
+card. Can be set by calling the <a
+href="Cardterminal.html#chunk_size">chunk_size</a>= method.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="manufacturer-attribute-method" class="method-detail">
+				<a name="manufacturer"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">manufacturer</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+The <a href="Cardterminal/Manufacturer.html">Manufacturer</a> object for
+this cardterminal.
+</p>
+				
+				</div>
+			</div>
+			
+			<div id="card-attribute-method" class="method-detail">
+				<a name="card"></a>
+				
+				<div class="method-heading attribute-method-heading">
+					<span class="method-name">card</span><span
+						class="attribute-access-type">[R]</span>
+				</div>
+
+				<div class="method-description">
+				
+				<p>
+<a href="Card.html">Card</a> object of the inserted chipcard.
+</p>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="cardterminals-method" class="method-detail ">
+				<a name="M000000"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cardterminals</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the mapping of cardterminal numbers to <a
+href="Cardterminal.html">Cardterminal</a> instances as a hash.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="cardterminals-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 17</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">cardterminals</span>
+      <span class="ruby-ivar">@cardterminals</span> <span class="ruby-operator">||=</span> {}
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="M000002"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(interface, number = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Creates a new <a href="Cardterminal.html">Cardterminal</a> object for this
+interface and initializes the card terminal that is connected. If no
+cardterminal number is given, a number (that is not currently in use) is
+assigned to this object. Otherwise this object is forced to use the given
+card terminal number. BTW: number has to be >= 0.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 31</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">interface</span>, <span class="ruby-identifier">number</span> = <span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-constant">LOCK</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-ivar">@interface</span> = <span class="ruby-identifier">interface</span>
+        <span class="ruby-ivar">@slot</span> = <span class="ruby-constant">ICC1</span>
+        <span class="ruby-ivar">@chunk_size</span> = <span class="ruby-value">255</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">number</span>
+          <span class="ruby-ivar">@number</span> = <span class="ruby-identifier">number</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-ivar">@number</span> = <span class="ruby-value">0</span>
+          <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">cardterminals</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-ivar">@number</span>)
+            <span class="ruby-ivar">@number</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">ct_init</span>(<span class="ruby-ivar">@number</span>, <span class="ruby-identifier">interface</span>)
+        <span class="ruby-identifier">cardterminals</span>[<span class="ruby-ivar">@number</span>] = <span class="ruby-keyword kw">true</span>
+        <span class="ruby-ivar">@manufacturer</span> = <span class="ruby-identifier">get_manufacturer</span>
+        <span class="ruby-identifier">reset</span>
+        <span class="ruby-identifier">select_file</span> <span class="ruby-comment cmt"># master file</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="open-method" class="method-detail ">
+				<a name="M000005"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">open</span><span
+						class="method-args">(interface, number = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Takes a block and yields to an initialized <a
+href="Cardterminal.html">Cardterminal</a> object. After the block has been
+called, the cardterminal is closed again.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="open-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 102</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">interface</span>, <span class="ruby-identifier">number</span> = <span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-identifier">cardterminal</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">interface</span>, <span class="ruby-identifier">cardterminal</span>)
+      <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">cardterminal</span>
+    <span class="ruby-keyword kw">ensure</span>
+      <span class="ruby-identifier">cardterminal</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cardterminal</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="card-inserted--method" class="method-detail ">
+				<a name="M000020"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">card_inserted?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if a card is inserted in the cardterminal at the moment, false
+if the cardterminal is empty.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="card-inserted--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 339</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">card_inserted?</span>
+      <span class="ruby-identifier">cs</span> = <span class="ruby-identifier">card_status</span>
+      <span class="ruby-identifier">cs</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:card</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">cs</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:card_connect</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">false</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="card-status-method" class="method-detail ">
+				<a name="M000019"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">card_status</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the card status as symbol: :no_card, :card, :card_connect.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="card-status-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 325</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">card_status</span>
+      <span class="ruby-identifier">response</span> = <span class="ruby-identifier">request_card_status</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">response</span>[<span class="ruby-value">0</span>]
+      <span class="ruby-keyword kw">when</span> <span class="ruby-constant">CTBCS_DATA_STATUS_NOCARD</span>
+        <span class="ruby-identifier">:no_card</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-constant">CTBCS_DATA_STATUS_CARD</span>
+        <span class="ruby-identifier">:card</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-constant">CTBCS_DATA_STATUS_CARD_CONNECT</span>
+        <span class="ruby-identifier">:card_connect</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="cardterminals-method" class="method-detail ">
+				<a name="M000001"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">cardterminals</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Convenience method to access <a
+href="Cardterminal.html#M000000">Cardterminal.cardterminals</a>.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="cardterminals-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 22</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cardterminals</span>
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">cardterminals</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="change-pin-method" class="method-detail ">
+				<a name="M000014"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">change_pin</span><span
+						class="method-args">(old_pin, new_pin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The pin of this card is changed from old_pin to new_pin. They can be given
+as strings or arrays of characters. A true result is returned if the
+sending was successful.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="change-pin-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 256</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">change_pin</span>(<span class="ruby-identifier">old_pin</span>, <span class="ruby-identifier">new_pin</span>)
+      <span class="ruby-identifier">old_pin</span> = <span class="ruby-identifier">old_pin</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">&quot;C*&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old_pin</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+      <span class="ruby-identifier">new_pin</span> = <span class="ruby-identifier">new_pin</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">&quot;C*&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">new_pin</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+      <span class="ruby-identifier">data</span> = <span class="ruby-identifier">old_pin</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">new_pin</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">255</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;size of old and new pin must be &lt;= 255&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">change_pin</span> = [ <span class="ruby-value">0</span>, <span class="ruby-value">0x24</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">data</span>.<span class="ruby-identifier">size</span> ] <span class="ruby-operator">+</span> <span class="ruby-identifier">data</span>
+      <span class="ruby-identifier">response</span> = <span class="ruby-identifier">data</span>(<span class="ruby-ivar">@slot</span>, <span class="ruby-constant">HOST</span>, <span class="ruby-identifier">change_pin</span>)
+      <span class="ruby-identifier">response</span>.<span class="ruby-identifier">successful?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-keyword kw">return</span>
+      <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="chunk-size--method" class="method-detail ">
+				<a name="M000004"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">chunk_size=</span><span
+						class="method-args">(size)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sets the size of the chunks of data that are read from/written to the card
+to size: (0 < size <= 255).
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="chunk-size--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 87</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">chunk_size=</span>(<span class="ruby-identifier">size</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;size must be &gt; 0&quot;</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> 
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;size must be &lt;= 255&quot;</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">255</span>
+      <span class="ruby-ivar">@chunk_size</span> = <span class="ruby-identifier">size</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="close-method" class="method-detail ">
+				<a name="M000007"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">close</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Terminates the communication with the cardterminal associated with this
+object and releases the assigned cardterminal number.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="close-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 134</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">close</span>
+      <span class="ruby-constant">LOCK</span>.<span class="ruby-identifier">synchronize</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">ct_close</span>(<span class="ruby-ivar">@number</span>)
+        <span class="ruby-identifier">cardterminals</span>.<span class="ruby-identifier">delete</span> <span class="ruby-ivar">@number</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="data-method" class="method-detail ">
+				<a name="M000006"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">data</span><span
+						class="method-args">(dad, sad, *commands)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sends a sequence of commands to the card or the cardterminal (depending on
+destination/dad and source address/sad) and returns the response (or
+responses) to the calling program. A command can be given as an array of
+bytes [ 0x12, 0x23 ] or as a string of the form &#8216;12:23:a4&#8217; or
+&#8216;12 23 a4&#8217; or as a <a href="Command.html">Command</a> object.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="data-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 114</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">data</span>(<span class="ruby-identifier">dad</span>, <span class="ruby-identifier">sad</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">commands</span>)
+      <span class="ruby-identifier">responses</span> = []
+      <span class="ruby-identifier">commands</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">command</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">command</span> =
+          <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">command</span>
+          <span class="ruby-keyword kw">when</span> <span class="ruby-constant">String</span> <span class="ruby-keyword kw">then</span> <span class="ruby-constant">Command</span>.<span class="ruby-identifier">from_string</span>(<span class="ruby-identifier">command</span>)
+          <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span> <span class="ruby-keyword kw">then</span> <span class="ruby-constant">Command</span>.<span class="ruby-identifier">from_array</span>(<span class="ruby-identifier">command</span>)
+          <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">command</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">$DEBUG</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">debug</span>(<span class="ruby-value">2</span>, <span class="ruby-identifier">command</span>)
+        <span class="ruby-identifier">data</span> = <span class="ruby-identifier">ct_data</span>(<span class="ruby-ivar">@number</span>, <span class="ruby-identifier">dad</span>, <span class="ruby-identifier">sad</span>, <span class="ruby-identifier">command</span>.<span class="ruby-identifier">data</span>)
+        <span class="ruby-identifier">response</span> = <span class="ruby-constant">Response</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">data</span>)
+        <span class="ruby-identifier">$DEBUG</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">debug</span>(<span class="ruby-value">1</span>, <span class="ruby-identifier">response</span>)
+        <span class="ruby-identifier">responses</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">response</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-operator">*</span><span class="ruby-identifier">responses</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="eject-icc-method" class="method-detail ">
+				<a name="M000017"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">eject_icc</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sends the eject card byte sequence to the card terminal and returns the <a
+href="Response.html">Response</a> object. This method is called by the <a
+href="Cardterminal.html#M000018">Cardterminal#reset</a> method.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="eject-icc-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 308</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">eject_icc</span>
+      <span class="ruby-identifier">eject</span> = [ <span class="ruby-value">0x20</span>, <span class="ruby-value">0x15</span>, <span class="ruby-value">0x01</span>, <span class="ruby-value">0x00</span>, <span class="ruby-value">0x00</span> ]
+      <span class="ruby-identifier">data</span>(<span class="ruby-constant">CT</span>, <span class="ruby-constant">HOST</span>, <span class="ruby-identifier">eject</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="enter-pin-method" class="method-detail ">
+				<a name="M000013"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">enter_pin</span><span
+						class="method-args">(pin)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The pin is sent to the card. It can be given as a string or an array of
+characters. A true result is returned if the sending was successful.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="enter-pin-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 242</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enter_pin</span>(<span class="ruby-identifier">pin</span>)
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">255</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;size of pin must be &lt;= 255&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">pin</span> = <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">&quot;C*&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+      <span class="ruby-identifier">enter_pin</span> = [ <span class="ruby-value">0</span>, <span class="ruby-value">0x20</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">pin</span>.<span class="ruby-identifier">size</span> ] <span class="ruby-operator">+</span> <span class="ruby-identifier">pin</span>
+      <span class="ruby-identifier">response</span> = <span class="ruby-identifier">data</span>(<span class="ruby-ivar">@slot</span>, <span class="ruby-constant">HOST</span>, <span class="ruby-identifier">enter_pin</span>)
+      <span class="ruby-identifier">response</span>.<span class="ruby-identifier">successful?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-keyword kw">return</span>
+      <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="read-method" class="method-detail ">
+				<a name="M000010"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">read</span><span
+						class="method-args">(address = 0, size = nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Attempts to read data of length size starting at address. If size is nil,
+an attempt is made to read the whole card memory.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="read-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 168</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">read</span>(<span class="ruby-identifier">address</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">size</span> = <span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@card</span>
+          <span class="ruby-identifier">size</span> = <span class="ruby-ivar">@card</span>.<span class="ruby-identifier">memory_size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">address</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">size</span> = <span class="ruby-identifier">chunk_size</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@card</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">address</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@card</span>.<span class="ruby-identifier">memory_size</span>
+        <span class="ruby-identifier">size</span> = <span class="ruby-ivar">@card</span>.<span class="ruby-identifier">memory_size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">address</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">data</span> = <span class="ruby-value str">''</span>
+      <span class="ruby-identifier">caught</span> = <span class="ruby-identifier">catch</span>(<span class="ruby-identifier">:break</span>) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">chunk_size</span>
+          <span class="ruby-identifier">d</span> = <span class="ruby-identifier">read_chunk</span>(<span class="ruby-identifier">address</span>, <span class="ruby-identifier">chunk_size</span>)
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">d</span>
+            <span class="ruby-identifier">data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">d</span>
+            <span class="ruby-identifier">address</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">chunk_size</span>
+            <span class="ruby-identifier">size</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">chunk_size</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-keyword kw">break</span> <span class="ruby-operator">:</span><span class="ruby-keyword kw">break</span>  
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">caught</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">:break</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">d</span> = <span class="ruby-identifier">read_chunk</span>(<span class="ruby-identifier">address</span>, <span class="ruby-identifier">size</span>) <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">d</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">data</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="request-card-status-method" class="method-detail ">
+				<a name="M000015"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">request_card_status</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Requests the card status from the cardterminal. Returns the <a
+href="Response.html">Response</a> object or nil if the response
+wasn&#8217;t successful. This method is called by the card_inserted? method
+to find out if a card is inserted into the terminal.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="request-card-status-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 273</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">request_card_status</span>
+      <span class="ruby-identifier">get_card_status</span> = [ <span class="ruby-constant">CTBCS_CLA</span>, <span class="ruby-constant">CTBCS_INS_STATUS</span>,
+        <span class="ruby-constant">CTBCS_P1_CT_KERNEL</span>, <span class="ruby-constant">CTBCS_P2_STATUS_ICC</span>, <span class="ruby-value">0</span> ]
+      <span class="ruby-identifier">response</span> = <span class="ruby-identifier">data</span>(<span class="ruby-constant">CT</span>, <span class="ruby-constant">HOST</span>, <span class="ruby-identifier">get_card_status</span>)
+      <span class="ruby-identifier">response</span>.<span class="ruby-identifier">successful?</span> <span class="ruby-value">? </span><span class="ruby-identifier">response</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="request-icc-method" class="method-detail ">
+				<a name="M000016"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">request_icc</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sends a byte sequence to the card to get the answer to reset <a
+href="Response.html">Response</a> object. This method is called by the <a
+href="Cardterminal.html#M000018">Cardterminal#reset</a> method.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="request-icc-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 283</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">request_icc</span>
+        <span class="ruby-identifier">get_atr</span> = [ <span class="ruby-constant">CTBCS_CLA</span>, <span class="ruby-constant">CTBCS_INS_REQUEST</span>, <span class="ruby-constant">CTBCS_P1_INTERFACE1</span>,
+               <span class="ruby-constant">CTBCS_P2_REQUEST_GET_ATR</span>, <span class="ruby-value">0</span> ]
+      <span class="ruby-ivar">@card_old</span> = <span class="ruby-ivar">@card</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@card</span>
+      <span class="ruby-ivar">@card</span>, <span class="ruby-identifier">atr</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">card_inserted?</span>
+          <span class="ruby-identifier">atr</span> = <span class="ruby-identifier">data</span>(<span class="ruby-constant">CT</span>, <span class="ruby-constant">HOST</span>, <span class="ruby-identifier">get_atr</span>)
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">atr</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">atr</span>.<span class="ruby-identifier">not_changed?</span>
+              <span class="ruby-ivar">@card</span> = <span class="ruby-ivar">@card_old</span>
+              <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@card</span>.<span class="ruby-identifier">atr</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-ivar">@card</span> = <span class="ruby-constant">Card</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">atr</span>)
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">CTAPIError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Caught: #{e}.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-ivar">@card</span>.<span class="ruby-identifier">atr</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="reset-method" class="method-detail ">
+				<a name="M000018"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">reset</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The cardterminal is reset by first calling <a
+href="Cardterminal.html#M000017">eject_icc</a> and then request_icc. If the
+reset was successful the <a href="Response.html">Response</a> object of <a
+href="Cardterminal.html#M000016">request_icc</a> is returned, otherwise a
+nontrue value is returned.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="reset-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 317</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reset</span>
+      <span class="ruby-identifier">eject_icc</span>
+      <span class="ruby-identifier">response</span> = <span class="ruby-identifier">request_icc</span> <span class="ruby-keyword kw">or</span> <span class="ruby-keyword kw">return</span>
+      <span class="ruby-identifier">response</span>.<span class="ruby-identifier">successful?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-keyword kw">return</span>
+      <span class="ruby-identifier">response</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="select-file-method" class="method-detail ">
+				<a name="M000008"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">select_file</span><span
+						class="method-args">(fid = [ 0x3f, 0 ])</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Sends the select file byte sequence to the card with a default value for
+the master file. Returns true if the response was successful, false
+otherwise.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="select-file-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 144</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">select_file</span>(<span class="ruby-identifier">fid</span> = [ <span class="ruby-value">0x3f</span>, <span class="ruby-value">0</span> ])
+      <span class="ruby-identifier">select_file</span> = [ <span class="ruby-value">0</span>, <span class="ruby-value">0xa4</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0x02</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">fid</span> ]
+      <span class="ruby-identifier">response</span> = <span class="ruby-identifier">data</span>(<span class="ruby-ivar">@slot</span>, <span class="ruby-constant">HOST</span>, <span class="ruby-identifier">select_file</span>)
+      <span class="ruby-identifier">response</span>.<span class="ruby-identifier">successful?</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="write-method" class="method-detail ">
+				<a name="M000012"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">write</span><span
+						class="method-args">(data, address = 0)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Attempts to write the string data to the card starting at address. On
+success returns a true value.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="write-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 216</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">write</span>(<span class="ruby-identifier">data</span>, <span class="ruby-identifier">address</span> = <span class="ruby-value">0</span>)
+      <span class="ruby-identifier">size</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">size</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@card</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">address</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@card</span>.<span class="ruby-identifier">memory_size</span>
+        <span class="ruby-identifier">size</span> = <span class="ruby-ivar">@card</span>.<span class="ruby-identifier">memory_size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">address</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">offset</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">caught</span> = <span class="ruby-identifier">catch</span>(<span class="ruby-identifier">:break</span>) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">chunk_size</span>
+          <span class="ruby-identifier">write_chunk</span>(<span class="ruby-identifier">address</span>, <span class="ruby-identifier">data</span>[<span class="ruby-identifier">offset</span>, <span class="ruby-identifier">chunk_size</span>]) <span class="ruby-keyword kw">or</span> <span class="ruby-keyword kw">break</span> <span class="ruby-operator">:</span><span class="ruby-keyword kw">break</span>
+          <span class="ruby-identifier">address</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">chunk_size</span>
+          <span class="ruby-identifier">offset</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">chunk_size</span>
+          <span class="ruby-identifier">size</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">chunk_size</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">caught</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:break</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">write_chunk</span>(<span class="ruby-identifier">address</span>, <span class="ruby-identifier">data</span>[<span class="ruby-identifier">offset</span>, <span class="ruby-identifier">size</span>])
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="private-instance-method-details" class="method-section section">
+			<h3 class="section-header">Private Instance Methods</h3>
+
+		
+			<div id="card-changed--method" class="method-detail ">
+				<a name="M000021"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">card_changed?</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns true if the card has been changed in the cardterminal, false it is
+still the same card. If an error occured nil is returned.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="card-changed--source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 347</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">card_changed?</span>
+      <span class="ruby-identifier">response</span> = <span class="ruby-identifier">reset</span> <span class="ruby-keyword kw">or</span> <span class="ruby-keyword kw">return</span>
+      <span class="ruby-identifier">response</span>.<span class="ruby-identifier">changed?</span> <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>
+      <span class="ruby-identifier">response</span>.<span class="ruby-identifier">not_changed?</span> <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+      <span class="ruby-keyword kw">return</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="debug-method" class="method-detail ">
+				<a name="M000027"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">debug</span><span
+						class="method-args">(direction, data)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Prints data with indication of direction to STDERR.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="debug-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 382</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">debug</span>(<span class="ruby-identifier">direction</span>, <span class="ruby-identifier">data</span>)
+      <span class="ruby-identifier">direction</span> =
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">direction</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'&gt;&gt;&gt; '</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-value">2</span> <span class="ruby-keyword kw">then</span> <span class="ruby-value str">'&lt;&lt;&lt; '</span>
+        <span class="ruby-keyword kw">else</span> <span class="ruby-value str">''</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">direction</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="get-manufacturer-method" class="method-detail ">
+				<a name="M000003"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_manufacturer</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns a <a href="Cardterminal/Manufacturer.html">Manufacturer</a> object
+with information about the manufacturer of this cardterminal. Could return
+nil if the response was not successful.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="get-manufacturer-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 59</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_manufacturer</span>
+      <span class="ruby-identifier">get_manufacturer_status</span> = [ <span class="ruby-constant">CTBCS_CLA</span>, <span class="ruby-constant">CTBCS_INS_STATUS</span>,
+        <span class="ruby-constant">CTBCS_P1_CT_KERNEL</span>, <span class="ruby-constant">CTBCS_P2_STATUS_MANUFACTURER</span>, <span class="ruby-value">0</span> ]
+      <span class="ruby-identifier">response</span> = <span class="ruby-identifier">data</span>(<span class="ruby-constant">CT</span>, <span class="ruby-constant">HOST</span>, <span class="ruby-identifier">get_manufacturer_status</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">response</span>.<span class="ruby-identifier">successful?</span>
+      <span class="ruby-constant">Manufacturer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">response</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="read-chunk-method" class="method-detail ">
+				<a name="M000009"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">read_chunk</span><span
+						class="method-args">(address, size)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="read-chunk-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 150</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">read_chunk</span>(<span class="ruby-identifier">address</span>, <span class="ruby-identifier">size</span>)
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">address</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">65535</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;address must be &lt;= 65535&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">255</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;size must be &lt;= 255&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">read_file</span> = [ <span class="ruby-value">0</span>, <span class="ruby-value">0xb0</span>, <span class="ruby-identifier">address</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">8</span>, <span class="ruby-identifier">address</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0xff</span>, <span class="ruby-identifier">size</span> ]
+      <span class="ruby-identifier">response</span> = <span class="ruby-identifier">data</span>(<span class="ruby-ivar">@slot</span>, <span class="ruby-constant">HOST</span>, <span class="ruby-identifier">read_file</span>)
+      <span class="ruby-identifier">response</span>.<span class="ruby-identifier">successful?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-keyword kw">return</span>
+      <span class="ruby-identifier">data</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">data</span>
+      <span class="ruby-identifier">data</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-value">-2</span>, <span class="ruby-value">2</span>)
+      <span class="ruby-identifier">data</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+			<div id="write-chunk-method" class="method-detail ">
+				<a name="M000011"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">write_chunk</span><span
+						class="method-args">(address, data)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p class="missing-docs">(Not documented)</p>
+					
+
+					
+					<div class="method-source-code"
+						id="write-chunk-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/ctapi.rb, line 198</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">write_chunk</span>(<span class="ruby-identifier">address</span>, <span class="ruby-identifier">data</span>)
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">address</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">65535</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;address must be &lt;= 65535&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">255</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;size of data must be &lt;= 255&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">data</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">&quot;C*&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">String</span>
+      <span class="ruby-identifier">write_file</span> = [ <span class="ruby-value">0</span>, <span class="ruby-value">0xd6</span>, <span class="ruby-identifier">address</span> <span class="ruby-operator">&gt;&gt;</span> <span class="ruby-value">8</span>, <span class="ruby-identifier">address</span> <span class="ruby-operator">&amp;</span> <span class="ruby-value">0xff</span>, <span class="ruby-identifier">data</span>.<span class="ruby-identifier">size</span> ] <span class="ruby-operator">+</span>
+        <span class="ruby-identifier">data</span>
+      <span class="ruby-identifier">response</span> = <span class="ruby-identifier">data</span>(<span class="ruby-ivar">@slot</span>, <span class="ruby-constant">HOST</span>, <span class="ruby-identifier">write_file</span>)
+      <span class="ruby-identifier">response</span>.<span class="ruby-identifier">successful?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-keyword kw">return</span>
+      <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
