@@ -1,0 +1,39 @@
+There are two possible ways to use this library:
+
+- You can require 'ctapicore' and directly use the ct_init, ct_data and
+  ct_close methods . That will give you access to the very simple C-Interface
+  in Ruby, but you have to send APDU commands and receive and interpret APDU
+  Responses yourself:
+
+ require 'ctapicore'
+ include CTAPICore
+ ct_init(PORT_COM1, 0)
+ response = ct_data(0, CT, HOST, "\x12\x34\x56")
+ p response
+ ct_close(0)
+
+- You can require 'ctapi' and the module CTAPI has some nice abstractions to
+  deal with cardterminals, cards and APDUs, which are much more the Ruby Way:
+
+ require 'ctapi'
+ include CTAPI
+ Cardterminal.open(PORT_COM1) do |ct|
+   puts "Cardterminal Manufacturer: " + ct.manufacturer.to_s
+   if ct.card_inserted?
+     card = ct.card
+     puts "My Cardterminal object: #{ct.inspect}"
+     puts "Current card status is: #{ct.card_status}"
+     puts "Answer to Reset is #{card.atr}."
+     puts "ATR ok? #{card.atr_ok?}."
+     puts "Memory size of this card is #{card.memory_size} bytes" +
+       (#{card.memory_blocks} blocks x #{card.memory_bits} bit)."
+     puts "Structure of this card is #{card.structure}."
+     puts "Supported protocol type of this card is #{card.protocol}."
+     puts "Trying to read(0, 16):"
+     data = ct.read(0, 16)
+     puts "Have read #{data.size} bytes:"
+     p data
+   else
+     puts "Please insert a card into your cardterminal!"
+   end
+ end
